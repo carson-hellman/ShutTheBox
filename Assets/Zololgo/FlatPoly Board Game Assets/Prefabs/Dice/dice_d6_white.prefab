@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4689745717259636}
   - component: {fileID: 33949288789186050}
   - component: {fileID: 23913710662430350}
+  - component: {fileID: 6899165601501318000}
   - component: {fileID: 3890544905243018774}
   - component: {fileID: 1974296279943957791}
   m_Layer: 7
@@ -91,6 +92,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6899165601501318000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966313739005046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd251dcce1a12c94b8288f12eb8ee722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRandomForceValue: 600
+  startRollingForce: 400
+  diceFaceNum: 0
 --- !u!54 &3890544905243018774
 Rigidbody:
   m_ObjectHideFlags: 0
