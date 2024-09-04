@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
             {
                 if (dice1.GetComponent<Rigidbody>().velocity == Vector3.zero && dice2.GetComponent<Rigidbody>().velocity == Vector3.zero)
                 {
-                    scoreText.text = (dice1.diceFaceNum + dice2.diceFaceNum).ToString();
+                    scoreText.text = "You rolled " + (dice1.diceFaceNum + dice2.diceFaceNum).ToString();
                 }
             }
         }

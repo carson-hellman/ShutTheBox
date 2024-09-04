@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dice1
   - Dice2
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -21,16 +21,16 @@ public class DiceRoll : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (body != null)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                RollDice();
-            }
-        }
+        // if (body != null)
+        // {
+        //     if (Input.GetMouseButtonDown(0))
+        //     {
+        //         RollDice();
+        //     }
+        // }
     }
 
-    private void RollDice()
+    public void RollDice()
     {
         body.isKinematic=false;
 
