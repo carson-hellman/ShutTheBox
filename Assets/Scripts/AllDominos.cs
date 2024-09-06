@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AllDominos : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class AllDominos : MonoBehaviour
 
     public GameObject CanvasObject;
     private Score scoreScript;
+    private SceneControl sceneScript;
+
+    public GameObject ResultCanvas;
+    [SerializeField]
+    TextMeshProUGUI ResultScoreText;
+    [SerializeField]
+    TextMeshProUGUI ResultText;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +31,7 @@ public class AllDominos : MonoBehaviour
         }
         totalScoreScript = FinalScoreText.GetComponent<TotalScore>();
         scoreScript = CanvasObject.GetComponent<Score>();
+        sceneScript = CanvasObject.GetComponent<SceneControl>();
         
     }
 
@@ -35,7 +44,6 @@ public class AllDominos : MonoBehaviour
     public void ValidOrLose()
     {
         int total = totalScoreScript.total;
-        //int[] unusedTiles = new int[12];
         List<int> unusedTiles = new List<int>();
 
         foreach(GameObject obj in dominos)
@@ -53,13 +61,13 @@ public class AllDominos : MonoBehaviour
         if (!valid)
         {
             // player lost / game over
-            Debug.Log("You lose");
+            // Debug.Log($"You lose, rolled a {scoreScript.NumRolled}");
+            CanvasObject.SetActive (false);
+            ResultText.text = "You Lose";
+            ResultScoreText.text = $"Final Score: {totalScoreScript.total}";
+            ResultCanvas.SetActive (true);
+            // UPDATE UI HERE FOR LOSE SCREEN
         }
-        else
-        {
-            // Debug.Log("Appropriate Selection");
-        }
-
     }
 
     private bool CanMatchSum(List<int> numbers, int target)

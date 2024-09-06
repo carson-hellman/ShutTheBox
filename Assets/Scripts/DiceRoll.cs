@@ -13,6 +13,7 @@ public class DiceRoll : MonoBehaviour
 
     public int diceFaceNum;
     public GameObject CanvasObject;
+    public GameObject RollDiceButton;
     private Score scoreScript;
 
     private void Awake()
@@ -28,7 +29,7 @@ public class DiceRoll : MonoBehaviour
 
     public void RollDice()
     {
-        scoreScript.rolling = true;
+        RollDiceButton.SetActive(false);
         body.isKinematic=false;
 
         forceX = Random.Range(0, maxRandomForceValue);
@@ -37,6 +38,8 @@ public class DiceRoll : MonoBehaviour
 
         body.AddForce(Vector3.up * startRollingForce);
         body.AddTorque(forceX, forceY, forceZ);
+
+        scoreScript.rolling = true;
     }
 
     private void Initialize()

@@ -28,4 +28,23 @@ public class FaceDetector : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        DiceRoll curDice = null;
+
+        if (other.tag == "Dice1")
+        {
+            curDice = dice1;
+        }
+        if (other.tag == "Dice2")
+        {
+            curDice = dice2;
+        }
+
+        if (curDice != null)
+        {
+            curDice.diceFaceNum = 0;
+        }
+    }
 }
