@@ -12,14 +12,18 @@ public class DominoSelect : MonoBehaviour
     private Score scoreScript;
     [SerializeField]
     TextMeshProUGUI UsablePointsText;
+    [SerializeField]
+    TextMeshProUGUI FinalScoreText;
+    private TotalScore totalScoreScript;
     public int tileCost;
-    private bool movable;
-    private bool upright = true;
+    public bool movable = true;
+    public bool upright = true;
 
     // Start is called before the first frame update
     void Start()
     {
         scoreScript = CanvasObject.GetComponent<Score>();
+        totalScoreScript = FinalScoreText.GetComponent<TotalScore>();
         movable = true;
     }
 
@@ -39,16 +43,35 @@ public class DominoSelect : MonoBehaviour
             transform.Rotate(90, 0, 0);
             scoreScript.NumRolled -= tileCost;
             UsablePointsText.text = $"{scoreScript.NumRolled} Usable Points";
-            // AT END OF ROUND IF PUT DOWN NEED TO MAKE SET MOVABLE FALSE !!!!!!!!!!!!!!!!!!!
-            // NEED BUTTON TO FINISH SELECTION THEN CHANGE ROLLING BACK TO TRUE ON SCORE SCRIP!!!!
         }
         else if (movable && !upright)
         {
-            // Debug.Log($"Should rotate back {tileCost}");
             upright = true;
             transform.Rotate(270, 0, 0);
             scoreScript.NumRolled += tileCost;
             UsablePointsText.text = $"{scoreScript.NumRolled} Usable Points";
+        }
+    }
+
+    public void finishedTurn()
+    {
+
+        if(scoreScript.NumRolled != 0)
+        {
+            UsablePointsText.text = "Invalid selection";
+            return;
+        }
+
+        if (upright == false && movable)
+        {
+            UsablePointsText.text = "";
+            movable = false;
+            totalScoreScript.total -= tileCost;
+        }
+
+        if (totalScoreScript.total == 0)
+        {
+            Debug.Log("YOU WIN!");
         }
     }
 }

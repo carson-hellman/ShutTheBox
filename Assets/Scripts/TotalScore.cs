@@ -20,7 +20,7 @@ public class TotalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        text.text = $"Score: {total}";
     }
 
     public void TallyScore(int numShut)

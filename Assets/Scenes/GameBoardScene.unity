@@ -155,7 +155,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1930046733}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total: 78
-  text: {fileID: 0}
+  text: {fileID: 1492901}
 --- !u!114 &1492901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +369,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 6
+  movable: 0
+  upright: 1
 --- !u!1 &72349375
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +777,272 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128822135}
   m_CullTransparentMesh: 1
+--- !u!1 &131946221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131946222}
+  - component: {fileID: 131946225}
+  - component: {fileID: 131946224}
+  - component: {fileID: 131946223}
+  m_Layer: 5
+  m_Name: FinishTurn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &131946222
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131946221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1537843380}
+  m_Father: {fileID: 1930046733}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 335.3983, y: -175.4112}
+  m_SizeDelta: {x: 125.9, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &131946223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131946221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 131946224}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1314940092}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 333510969}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 216699003}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1092883027}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 604808078}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 44790668}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 229771853}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 775039003}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1708680499}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2110065065}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1744595775}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 437977267}
+        m_TargetAssemblyTypeName: DominoSelect, Assembly-CSharp
+        m_MethodName: finishedTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &131946224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131946221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.84313726, g: 0.8862745, b: 0.14509805, a: 0.69411767}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &131946225
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131946221}
+  m_CullTransparentMesh: 1
 --- !u!1 &146751299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1300,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 3
+  movable: 0
+  upright: 1
 --- !u!1 &229771848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5481582300767826508, guid: 70867612d079d934783680552365926c,
@@ -1058,7 +1330,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 7
+  movable: 0
+  upright: 1
 --- !u!1 &257259656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1635,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 2
+  movable: 0
+  upright: 1
 --- !u!1 &345791206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1940,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 12
+  movable: 0
+  upright: 1
 --- !u!1 &456419360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,7 +2488,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 5
+  movable: 0
+  upright: 1
 --- !u!1 &619223620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2647,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 8
+  movable: 0
+  upright: 1
 --- !u!1 &802780165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,6 +3058,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Dice2
       objectReference: {fileID: 0}
+    - target: {fileID: 6899165601501318000, guid: 29161880b0c72c848a5ea5f7d2cf423f,
+        type: 3}
+      propertyPath: CanvasObject
+      value: 
+      objectReference: {fileID: 1930046728}
     - target: {fileID: 7604092033095166772, guid: 29161880b0c72c848a5ea5f7d2cf423f,
         type: 3}
       propertyPath: m_TagString
@@ -2968,7 +3260,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 4
+  movable: 0
+  upright: 1
 --- !u!1001 &1095322694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3432,7 +3727,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 1
+  movable: 0
+  upright: 1
 --- !u!1 &1325661467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,6 +4101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1375480560}
+  - component: {fileID: 1375480561}
   m_Layer: 0
   m_Name: Dominos
   m_TagString: Untagged
@@ -3837,6 +4136,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1375480561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375480559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea92e4eac2b8ee4b83ffd013354887b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FinalScoreText: {fileID: 1492901}
+  CanvasObject: {fileID: 1930046728}
 --- !u!1001 &1381149282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3921,6 +4234,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Dice1
       objectReference: {fileID: 0}
+    - target: {fileID: 6899165601501318000, guid: 29161880b0c72c848a5ea5f7d2cf423f,
+        type: 3}
+      propertyPath: CanvasObject
+      value: 
+      objectReference: {fileID: 1930046728}
     - target: {fileID: 7604092033095166772, guid: 29161880b0c72c848a5ea5f7d2cf423f,
         type: 3}
       propertyPath: m_TagString
@@ -4129,6 +4447,141 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -4371503789280687474, guid: e6d07c9e1ff57b64ab616ca8b9c3882b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6d07c9e1ff57b64ab616ca8b9c3882b, type: 3}
+--- !u!1 &1537843379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537843380}
+  - component: {fileID: 1537843382}
+  - component: {fileID: 1537843381}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1537843380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537843379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 131946222}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1537843381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537843379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Finish Turn
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1537843382
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537843379}
+  m_CullTransparentMesh: 1
 --- !u!1 &1543695330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,7 +5316,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 9
+  movable: 0
+  upright: 1
 --- !u!1 &1744595770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3086699415144875470, guid: ad6aef6a2fbc87f4bb1a3b2bbc4a4fe2,
@@ -4890,7 +5346,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 11
+  movable: 0
+  upright: 1
 --- !u!1 &1825211388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,7 +5381,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1930046733}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5697,6 +6156,7 @@ MonoBehaviour:
   NumRolled: 0
   rolling: 1
   scoreText: {fileID: 2078049126}
+  Dominos: {fileID: 1375480559}
 --- !u!114 &1930046730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5772,6 +6232,7 @@ RectTransform:
   m_Children:
   - {fileID: 1569532200}
   - {fileID: 2113716110}
+  - {fileID: 131946222}
   - {fileID: 2078049128}
   - {fileID: 1492899}
   - {fileID: 1825211389}
@@ -6316,7 +6777,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1930046733}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6617,7 +7078,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasObject: {fileID: 1930046728}
   UsablePointsText: {fileID: 1825211390}
+  FinalScoreText: {fileID: 1492901}
   tileCost: 10
+  movable: 0
+  upright: 1
 --- !u!1 &2113716109
 GameObject:
   m_ObjectHideFlags: 0

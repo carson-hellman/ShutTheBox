@@ -7,12 +7,30 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public DiceRoll dice1;
+    Vector3 startPosD1;
+    Rigidbody d1Body;
     public DiceRoll dice2;
+    Vector3 startPosD2;
+    Rigidbody d2Body;
     public int NumRolled;
     public bool rolling = true;
 
     [SerializeField]
     TextMeshProUGUI scoreText;
+
+    public GameObject Dominos;
+    private AllDominos allDominosScript;
+
+    private void Start()
+    {
+        startPosD1 = dice1.transform.position;
+        startPosD2 = dice2.transform.position;
+        d1Body = dice1.GetComponent<Rigidbody>();
+        d2Body = dice2.GetComponent<Rigidbody>();
+        
+        allDominosScript = Dominos.GetComponent<AllDominos>();
+
+    }
 
     private void Update()
     {
@@ -26,6 +44,7 @@ public class Score : MonoBehaviour
                     {
                         NumRolled = dice1.diceFaceNum + dice2.diceFaceNum;
                         scoreText.text = "Rolled " + (NumRolled).ToString();
+                        allDominosScript.ValidOrLose();
                     }
                 }
             }

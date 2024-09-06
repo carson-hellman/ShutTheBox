@@ -12,26 +12,23 @@ public class DiceRoll : MonoBehaviour
     private float forceX, forceY, forceZ;
 
     public int diceFaceNum;
+    public GameObject CanvasObject;
+    private Score scoreScript;
 
     private void Awake()
     {
+        scoreScript = CanvasObject.GetComponent<Score>();
         Initialize();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        // if (body != null)
-        // {
-        //     if (Input.GetMouseButtonDown(0))
-        //     {
-        //         RollDice();
-        //     }
-        // }
     }
 
     public void RollDice()
     {
+        scoreScript.rolling = true;
         body.isKinematic=false;
 
         forceX = Random.Range(0, maxRandomForceValue);
