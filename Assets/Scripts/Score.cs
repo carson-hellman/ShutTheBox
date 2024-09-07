@@ -37,7 +37,7 @@ public class Score : MonoBehaviour
     private void Update()
     {
         timer += 1;
-        if (timer == 60)
+        if (timer == 120)
         {
             timer = 0;
             if(rolling)
