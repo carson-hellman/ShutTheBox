@@ -9,17 +9,6 @@ public class SceneControl : MonoBehaviour
     public GameObject Button10;
     public GameObject Button12;
     public Image StartButtonImage;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void StartGameScene12()
     {

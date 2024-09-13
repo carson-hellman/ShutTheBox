@@ -333,7 +333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &17468315 stripped
 Transform:
@@ -3970,7 +3970,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &290140313
 Canvas:
   m_ObjectHideFlags: 0
@@ -3980,9 +3980,9 @@ Canvas:
   m_GameObject: {fileID: 290140308}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 2
+  m_Camera: {fileID: 978448557}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -3999,23 +3999,23 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290140308}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
+  m_LocalPosition: {x: 0, y: 0, z: -11.693692}
+  m_LocalScale: {x: 0.0022865357, y: 0.0022865357, z: 0.0022865357}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 209666127}
   - {fileID: 773432613}
   - {fileID: 857264087}
   - {fileID: 2039187513}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1701311975}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7.5773816}
+  m_SizeDelta: {x: 897.99994, y: 505}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &304247882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4278,6 +4278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dice1: {fileID: 873654363}
   dice2: {fileID: 1585626895}
+  CanvasObject: {fileID: 290140308}
 --- !u!64 &310780664
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14198,7 +14199,7 @@ Transform:
   - {fileID: 837642040}
   - {fileID: 1357427598}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &939283396 stripped
 Transform:
@@ -14347,7 +14348,7 @@ Transform:
   - {fileID: 71917082}
   - {fileID: 688631170}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &953188822 stripped
 Transform:
@@ -14819,7 +14820,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1701311975}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
 --- !u!45 &978448559
 Skybox:
@@ -26087,9 +26088,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 290140314}
   - {fileID: 978448558}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1707402840 stripped
 Transform:

@@ -41,22 +41,17 @@ public class DominoSelect : MonoBehaviour
         movable = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SelectedDomino()
     {
-        scoreScript.rolling = false;
+        UsablePointsText.text = "";
+        // scoreScript.rolling = false;
         if(transform.eulerAngles.x == 315 && (scoreScript.NumRolled - tileCost >= 0))
         {
             // Debug.Log("rotate down");
             upright = false;
             transform.Rotate(90, 0, 0);
             scoreScript.NumRolled -= tileCost;
-            UsablePointsText.text = $"{scoreScript.NumRolled} Usable Point(s)";
+            // UsablePointsText.text = $"{scoreScript.NumRolled} Usable Point(s)";
             DominoSelectorImage.color = new Color32(255,255,0,60);
         }
         else if (movable && !upright)
@@ -64,24 +59,25 @@ public class DominoSelect : MonoBehaviour
             upright = true;
             transform.Rotate(270, 0, 0);
             scoreScript.NumRolled += tileCost;
-            UsablePointsText.text = $"{scoreScript.NumRolled} Usable Point(s)";
+            // UsablePointsText.text = $"{scoreScript.NumRolled} Usable Point(s)";
             DominoSelectorImage.color = new Color32(255,255,255,60);
         }
     }
 
     public void finishedTurn()
     {
-        scoreText.text = "";
-        RollDiceButton.SetActive(true);
-
         if(scoreScript.NumRolled != 0)
         {
             UsablePointsText.text = "Invalid selection";
             return;
         }
 
+        scoreText.text = "";
+        RollDiceButton.SetActive(true);
+
         if (upright == false && movable)
         {
+            // Debug.Log("Disabling tile");
             UsablePointsText.text = "";
             movable = false;
             totalScoreScript.total -= tileCost;

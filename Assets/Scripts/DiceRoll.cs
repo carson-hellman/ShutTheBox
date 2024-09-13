@@ -22,11 +22,6 @@ public class DiceRoll : MonoBehaviour
         Initialize();
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-    }
-
     public void RollDice()
     {
         RollDiceButton.SetActive(false);
@@ -38,8 +33,6 @@ public class DiceRoll : MonoBehaviour
 
         body.AddForce(Vector3.up * startRollingForce);
         body.AddTorque(forceX, forceY, forceZ);
-
-        scoreScript.rolling = true;
     }
 
     private void Initialize()

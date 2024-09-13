@@ -6,6 +6,13 @@ public class FaceDetector : MonoBehaviour
 {
     public DiceRoll dice1;
     public DiceRoll dice2;
+    public GameObject CanvasObject;
+    private Score scoreScript;
+
+    private void Awake()
+    {
+        scoreScript = CanvasObject.GetComponent<Score>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -31,20 +38,6 @@ public class FaceDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        DiceRoll curDice = null;
-
-        if (other.tag == "Dice1")
-        {
-            curDice = dice1;
-        }
-        if (other.tag == "Dice2")
-        {
-            curDice = dice2;
-        }
-
-        if (curDice != null)
-        {
-            curDice.diceFaceNum = 0;
-        }
+        scoreScript.rolling = true;
     }
 }

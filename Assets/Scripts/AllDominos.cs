@@ -35,12 +35,6 @@ public class AllDominos : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ValidOrLose()
     {
         int total = totalScoreScript.total;

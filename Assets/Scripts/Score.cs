@@ -21,8 +21,6 @@ public class Score : MonoBehaviour
     public GameObject Dominos;
     private AllDominos allDominosScript;
 
-    private int timer = 0;
-
     private void Start()
     {
         startPosD1 = dice1.transform.position;
@@ -36,23 +34,16 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        timer += 1;
-        if (timer == 120)
+        if (rolling)
         {
-            timer = 0;
-            if(rolling)
+            if (dice1.GetComponent<Rigidbody>().velocity == Vector3.zero && dice2.GetComponent<Rigidbody>().velocity == Vector3.zero)
             {
-                if (dice1 != null && dice2 != null)
+                NumRolled = dice1.diceFaceNum + dice2.diceFaceNum;
+                if (NumRolled != 0)
                 {
-                    if (dice1.diceFaceNum != 0 && dice2.diceFaceNum != 0)
-                    {
-                        if (dice1.GetComponent<Rigidbody>().velocity == Vector3.zero && dice2.GetComponent<Rigidbody>().velocity == Vector3.zero)
-                        {
-                            NumRolled = dice1.diceFaceNum + dice2.diceFaceNum;
-                            scoreText.text = "Rolled " + (NumRolled).ToString();
-                            allDominosScript.ValidOrLose();
-                        }
-                    }
+                    scoreText.text = "Rolled " + (NumRolled).ToString();
+                    allDominosScript.ValidOrLose();
+                    rolling = false;
                 }
             }
         }
